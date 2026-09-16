@@ -197,17 +197,68 @@ body{
     }
 }
 </style>
+/* 入场页面 */
+#welcomeScreen {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: linear-gradient(135deg, #fff5f7, #ffe8ee);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: opacity 1s ease, visibility 1s ease;
+}
 
+#welcomeScreen.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.welcome-content {
+    padding: 30px;
+}
+
+.heart {
+    font-size: 60px;
+    animation: heartbeat 1.4s infinite;
+}
+
+.welcome-content h1 {
+    font-size: 36px;
+    margin: 20px 0 10px;
+}
+
+.welcome-content p {
+    color: #888;
+    margin-bottom: 35px;
+}
+
+#enterBtn {
+    border: none;
+    padding: 14px 32px;
+    border-radius: 30px;
+    background: #222;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#enterBtn:hover {
+    transform: scale(1.05);
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+}
 </head>
-<!-- 入场页面 -->
-<div id="welcomeScreen">
-    <div class="welcome-content">
-        <div class="heart">❤️</div>
-        <h1>LY❤️LCYT</h1>
-        <p>有你的每一天，都值得被记录</p>
 
-        <button id="enterBtn">点击进入 ❤️</button>
-    </div>
 </div>
 
 <!-- 背景音乐 -->
