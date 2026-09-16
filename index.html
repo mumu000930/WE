@@ -130,143 +130,119 @@ body{
     font-size:38px;
 }
 
-
 .gallery{
     grid-template-columns:1fr;
 }
 
 }
-/* 入场页面 */
-#welcomeScreen {
-    position: fixed;
-    inset: 0;
-    z-index: 99999;
-    background: linear-gradient(135deg, #fff5f7, #ffe8ee);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    transition: opacity 1s ease, visibility 1s ease;
+
+
+/* =========================
+   入场页面
+========================= */
+
+#welcomeScreen{
+    position:fixed;
+    inset:0;
+    z-index:99999;
+    background:linear-gradient(135deg,#fff5f7,#ffe8ee);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    transition:opacity 1s ease,visibility 1s ease;
 }
 
-#welcomeScreen.hide {
-    opacity: 0;
-    visibility: hidden;
+#welcomeScreen.hide{
+    opacity:0;
+    visibility:hidden;
 }
 
-.welcome-content {
-    padding: 30px;
+.welcome-content{
+    padding:30px;
 }
 
-.heart {
-    font-size: 60px;
-    animation: heartbeat 1.4s infinite;
+.heart{
+    font-size:60px;
+    animation:heartbeat 1.4s infinite;
 }
 
-.welcome-content h1 {
-    font-size: 36px;
-    margin: 20px 0 10px;
+.welcome-content h1{
+    font-size:36px;
+    margin:20px 0 10px;
 }
 
-.welcome-content p {
-    color: #888;
-    margin-bottom: 35px;
+.welcome-content p{
+    color:#888;
+    margin-bottom:35px;
 }
 
-#enterBtn {
-    border: none;
-    padding: 14px 32px;
-    border-radius: 30px;
-    background: #222;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
+#enterBtn{
+    border:none;
+    padding:14px 32px;
+    border-radius:30px;
+    background:#222;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
 }
 
-#enterBtn:hover {
-    transform: scale(1.05);
+#enterBtn:hover{
+    transform:scale(1.05);
 }
 
-@keyframes heartbeat {
-    0%, 100% {
-        transform: scale(1);
+@keyframes heartbeat{
+    0%,100%{
+        transform:scale(1);
     }
-    50% {
-        transform: scale(1.15);
+
+    50%{
+        transform:scale(1.15);
     }
 }
+
 </style>
-/* 入场页面 */
-#welcomeScreen {
-    position: fixed;
-    inset: 0;
-    z-index: 99999;
-    background: linear-gradient(135deg, #fff5f7, #ffe8ee);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    transition: opacity 1s ease, visibility 1s ease;
-}
-
-#welcomeScreen.hide {
-    opacity: 0;
-    visibility: hidden;
-}
-
-.welcome-content {
-    padding: 30px;
-}
-
-.heart {
-    font-size: 60px;
-    animation: heartbeat 1.4s infinite;
-}
-
-.welcome-content h1 {
-    font-size: 36px;
-    margin: 20px 0 10px;
-}
-
-.welcome-content p {
-    color: #888;
-    margin-bottom: 35px;
-}
-
-#enterBtn {
-    border: none;
-    padding: 14px 32px;
-    border-radius: 30px;
-    background: #222;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-#enterBtn:hover {
-    transform: scale(1.05);
-}
-
-@keyframes heartbeat {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.15);
-    }
-}
 </head>
+
+
+<body>
+
+
+<!-- =========================
+     入场页面
+========================= -->
+
+<div id="welcomeScreen">
+
+    <div class="welcome-content">
+
+        <div class="heart">❤️</div>
+
+        <h1>我们的世界</h1>
+
+        <p>有你的每一天，都值得被记录</p>
+
+        <button id="enterBtn">
+            点击进入 ❤️
+        </button>
+
+    </div>
 
 </div>
 
+
 <!-- 背景音乐 -->
+
 <audio id="bgMusic" loop preload="auto">
     <source src="陆虎 - 拉过勾的.mp3" type="audio/mpeg">
 </audio>
 
-<body>
+
+<!-- =========================
+     回忆
+========================= -->
+
 <div style="text-align:center;margin:30px;">
 
 <h2>我们的回忆 ❤️</h2>
@@ -281,6 +257,11 @@ body{
 
 </div>
 
+
+<!-- =========================
+     首页
+========================= -->
+
 <section class="hero">
 
 <div>
@@ -292,185 +273,193 @@ YOUR NAME × HER NAME
 <p>
 第一次过万圣节
 </p>
-<img src="微信图片_20260914054920_56_15.jpg" width="450"> 
-    
-<img src="微信图片_20260914054913_55_15.jpg" width="450">   
 
+<img src="微信图片_20260914054920_56_15.jpg" width="450">
+
+<img src="微信图片_20260914054913_55_15.jpg" width="450">
 
 <div class="days">
 <span id="days">0</span> Days ❤️
 </div>
 
-
 </div>
 
 </section>
 
 
+<!-- =========================
+     时间轴
+========================= -->
 
 <section class="section">
-
 
 <h2 class="title">
 Our Timeline
 </h2>
 
-
 <div class="timeline">
 
-
 <div class="item">
-
-
-<div class="item">
-
-<h3>
-
-</h3>
 
 <p>
 广州长隆水上乐园
 </p>
-<img src="微信图片_20260914054811_52_15.jpg" width="600">
-</div>
 
+<img src="微信图片_20260914054811_52_15.jpg" width="600">
+
+</div>
 
 
 <div class="item">
 
-<h3>
-
-</h3>
-
 <p>
 汉口江滩
 </p>
+
 <img src="微信图片_20260914054837_53_15.jpg" width="600">
-</div>
-
 
 </div>
 
+</div>
 
 </section>
 
 
-
+<!-- =========================
+     Memories
+========================= -->
 
 <section class="section">
-
 
 <h2 class="title">
 Memories
 </h2>
 
-
 <div class="gallery">
 
+<img src="微信图片_20260914183723_57_15.jpg">
 
-<img src="微信图片_20260914183723_57_15.jpg" width="280">
-    
-<img src="微信图片_20260914183757_58_15.jpg" width="280">
+<img src="微信图片_20260914183757_58_15.jpg">
 
-<img src="微信图片_20260914183821_59_15.jpg" width="280">
+<img src="微信图片_20260914183821_59_15.jpg">
 
-<img src="微信图片_20260914183839_60_15.jpg" width="280">
- 
-<img src="微信图片_20260914183856_61_15.jpg" width="280">
-    
-<img src="微信图片_20260914195233_62_15.jpg" width="280">
+<img src="微信图片_20260914183839_60_15.jpg">
+
+<img src="微信图片_20260914183856_61_15.jpg">
+
+<img src="微信图片_20260914195233_62_15.jpg">
+
 </div>
-
 
 </section>
 
 
-
-
+<!-- =========================
+     情书
+========================= -->
 
 <section class="section">
-
 
 <h2 class="title">
 A Letter
 </h2>
 
-
 <div class="letter">
 
+<img src="微信图片_20260914054900_54_15.jpg"
+     width="600"
+     height="600">
 
+<img src="微信图片_20260914235748_63_15.jpg"
+     width="600"
+     height="600">
 
-<img src="微信图片_20260914054900_54_15.jpg" width="600" height="600">
-    
-<img src="微信图片_20260914235748_63_15.jpg" width="600" height="600">
 <br><br>
+
 臭宝宝：
+
 谢谢你出现在我的生命里。
 
 <br>
 
 希望未来很多年，
+
 我们依然可以一起看日落，
+
 一起吃喜欢的东西，
+
 一起去更多地方。
 
 <br><br>
 
 Love ❤️
 
-
 </div>
-
 
 </section>
 
 
-
+<!-- =========================
+     日期计算
+========================= -->
 
 <script>
 
-
-// 修改这里的恋爱开始日期
 let start =
 new Date("2020-03-26");
 
-
 let now =
 new Date();
-
 
 let diff =
 Math.floor(
 (now-start)/(1000*60*60*24)
 );
 
-
 document.getElementById("days")
 .innerHTML=diff;
 
-
 </script>
+
+
+<!-- =========================
+     点击进入 + 音乐
+========================= -->
 
 <script>
-const enterBtn = document.getElementById("enterBtn");
-const welcomeScreen = document.getElementById("welcomeScreen");
-const bgMusic = document.getElementById("bgMusic");
 
-enterBtn.addEventListener("click", function () {
+const enterBtn =
+document.getElementById("enterBtn");
 
-    // 播放音乐
-    bgMusic.play().catch(error => {
-        console.log("音乐播放失败：", error);
+const welcomeScreen =
+document.getElementById("welcomeScreen");
+
+const bgMusic =
+document.getElementById("bgMusic");
+
+
+enterBtn.addEventListener("click",function(){
+
+    bgMusic.play().catch(function(error){
+
+        console.log("音乐播放失败：",error);
+
     });
 
-    // 淡出进入页面
+
     welcomeScreen.classList.add("hide");
 
-    setTimeout(() => {
-        welcomeScreen.style.display = "none";
-    }, 1000);
-});
-</script>
-</body>
 
+    setTimeout(function(){
+
+        welcomeScreen.style.display="none";
+
+    },1000);
+
+});
+
+</script>
+
+
+</body>
 </html>
