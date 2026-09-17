@@ -1,95 +1,246 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Our Story</title>
 
 <style>
 
-/* =========================
-   基础
-========================= */
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:"Helvetica Neue","PingFang SC",sans-serif;
 }
 
 body{
-    background:#f8f8f8;
-    color:#222;
+    font-family:
+        "Microsoft YaHei",
+        "PingFang SC",
+        Arial,
+        sans-serif;
+    background:#f7f4f1;
+    color:#333;
 }
 
-
 /* =========================
-   首页
+   欢迎页面
 ========================= */
 
-.hero{
-    min-height:100vh;
+#welcomeScreen{
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100vh;
+
     display:flex;
     justify-content:center;
     align-items:center;
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,0.90),
+            rgba(255,255,255,0.90)
+        );
+
+    z-index:9999;
+
+    transition:opacity 1s ease;
+}
+
+.welcome-content{
     text-align:center;
-    padding:40px 20px;
+    padding:30px;
 }
 
-.hero h1{
-    font-size:60px;
-    letter-spacing:8px;
-    font-weight:300;
+.welcome-content h1{
+    font-size:42px;
+    letter-spacing:5px;
+    margin-bottom:20px;
 }
 
-.hero p{
-    margin-top:20px;
+.welcome-content h2{
+    font-size:26px;
+    font-weight:400;
+    margin-bottom:15px;
+}
+
+.welcome-content p{
     color:#777;
-    font-size:18px;
-}
-
-
-/* =========================
-   日期
-========================= */
-
-.days{
-    margin-top:20px;
-    font-size:32px;
-    font-weight:500;
-}
-
-
-/* =========================
-   模块
-========================= */
-
-.section{
-    max-width:1000px;
-    margin:auto;
-    padding:60px 20px;
-}
-
-.title{
-    font-size:36px;
-    font-weight:300;
+    font-size:16px;
     margin-bottom:30px;
 }
 
+#enterBtn{
+    border:none;
+    padding:14px 32px;
+
+    background:#333;
+    color:white;
+
+    border-radius:30px;
+
+    font-size:16px;
+    cursor:pointer;
+
+    transition:all .3s ease;
+}
+
+#enterBtn:hover{
+    transform:translateY(-2px);
+    opacity:.85;
+}
+
+#welcomeScreen.hide{
+    opacity:0;
+}
 
 /* =========================
-   时间轴
+   主体
+========================= */
+
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+}
+
+/* =========================
+   顶部标题
+========================= */
+
+header{
+    text-align:center;
+    padding:80px 20px 50px;
+}
+
+header h1{
+    font-size:38px;
+    font-weight:500;
+    letter-spacing:4px;
+}
+
+header p{
+    margin-top:15px;
+    color:#888;
+}
+
+/* =========================
+   Section
+========================= */
+
+.section{
+    margin-bottom:80px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:28px;
+    font-weight:500;
+    margin-bottom:40px;
+}
+
+.section-title::after{
+    content:"";
+    display:block;
+
+    width:50px;
+    height:2px;
+
+    background:#333;
+
+    margin:15px auto 0;
+}
+
+/* =========================
+   顶部照片
+========================= */
+
+.top-gallery{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.top-gallery img{
+    width:100%;
+    height:420px;
+
+    object-fit:contain;
+
+    background:#fff;
+
+    border-radius:12px;
+
+    display:block;
+}
+
+/* =========================
+   Hero
+========================= */
+
+.hero{
+    text-align:center;
+    padding:20px 0;
+}
+
+.hero h2{
+    font-size:30px;
+    font-weight:400;
+    margin-bottom:10px;
+}
+
+.hero p{
+    color:#999;
+    margin-bottom:30px;
+}
+
+.hero-images{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.hero-images img{
+    width:100%;
+    height:420px;
+
+    object-fit:contain;
+
+    background:#fff;
+
+    border-radius:12px;
+}
+
+/* =========================
+   天数
+========================= */
+
+.days-box{
+    text-align:center;
+    margin:60px 0;
+}
+
+.days{
+    font-size:64px;
+    font-weight:500;
+    letter-spacing:3px;
+}
+
+.days-text{
+    margin-top:10px;
+    color:#888;
+    font-size:16px;
+}
+
+/* =========================
+   时间线
 ========================= */
 
 .timeline{
-
     display:grid;
-
     grid-template-columns:repeat(2,1fr);
 
     gap:30px;
@@ -97,85 +248,103 @@ body{
     border-left:none;
 
     padding-left:0;
-
 }
 
-.item{
-    margin-bottom:30px;
+.timeline-item{
+    background:#fff;
+
+    padding:25px;
+
+    border-radius:18px;
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,0.05);
 }
 
-.item h3{
+.timeline-item h3{
     font-size:22px;
+    font-weight:500;
+
+    margin-bottom:8px;
 }
 
-.item p{
-    margin-top:10px;
-    color:#777;
+.timeline-item p{
+    color:#999;
+
+    margin-bottom:20px;
 }
 
+.timeline-item img{
+    width:100%;
+    height:420px;
+
+    object-fit:contain;
+
+    background:#f7f7f7;
+
+    border-radius:12px;
+}
 
 /* =========================
-   所有图片
-========================= */
-
-body > div[style*="text-align:center"] img{
-
-    width:420px;
-    height:420px;
-
-    object-fit:contain;
-
-    border-radius:12px;
-
-    margin:5px;
-
-    vertical-align:middle;
-}
-
-
-.hero img{
-
-    width:420px;
-    height:420px;
-
-    object-fit:contain;
-
-    border-radius:12px;
-
-    margin:5px;
-}
-
-
-.item img{
-
-    width:420px;
-    height:420px;
-
-    object-fit:contain;
-
-    border-radius:12px;
-
-    margin-top:10px;
-}
-
-
-/* =========================
-   Memories
+   回忆
 ========================= */
 
 .gallery{
-
     display:grid;
 
     grid-template-columns:repeat(2,1fr);
 
-    gap:15px;
-
+    gap:20px;
 }
 
-
 .gallery img{
+    width:100%;
+    height:420px;
 
+    object-fit:contain;
+
+    background:#fff;
+
+    border-radius:12px;
+
+    display:block;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.gallery img:hover{
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.10);
+}
+
+/* =========================
+   情书
+========================= */
+
+.letter{
+    background:#fff;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    line-height:2;
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,0.05);
+
+    text-align:center;
+}
+
+.letter p{
+    margin-bottom:10px;
+}
+
+.letter video{
     width:420px;
     height:420px;
 
@@ -185,217 +354,133 @@ body > div[style*="text-align:center"] img{
 
     border-radius:12px;
 
-    filter:grayscale(20%);
-
     display:block;
 
-    margin:auto;
+    margin:20px auto;
+
+    background:#000;
 }
 
-
 /* =========================
-   情书
+   底部
 ========================= */
 
-.letter{
-
-    background:white;
-
-    padding:40px;
-
-    border-radius:20px;
-
-    line-height:2;
-
-    box-shadow:
-    0 20px 50px rgba(0,0,0,.05);
-
-}
-
-
-/* =========================
-   入场页面
-========================= */
-
-#welcomeScreen{
-
-    position:fixed;
-
-    inset:0;
-
-    z-index:99999;
-
-    background:
-    linear-gradient(
-        135deg,
-        #fff5f7,
-        #ffe8ee
-    );
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
+footer{
     text-align:center;
 
-    transition:
-    opacity 1s ease,
-    visibility 1s ease;
+    padding:50px 20px 70px;
+
+    color:#999;
+
+    font-size:14px;
 }
-
-
-#welcomeScreen.hide{
-
-    opacity:0;
-
-    visibility:hidden;
-
-}
-
-
-.welcome-content{
-
-    padding:30px;
-
-}
-
-
-.heart{
-
-    font-size:60px;
-
-    animation:
-    heartbeat 1.4s infinite;
-
-}
-
-
-.welcome-content h1{
-
-    font-size:36px;
-
-    margin:20px 0 10px;
-
-}
-
-
-.welcome-content p{
-
-    color:#888;
-
-    margin-bottom:35px;
-
-}
-
-
-#enterBtn{
-
-    border:none;
-
-    padding:14px 32px;
-
-    border-radius:30px;
-
-    background:#222;
-
-    color:white;
-
-    font-size:16px;
-
-    cursor:pointer;
-
-    transition:0.3s;
-
-}
-
-
-#enterBtn:hover{
-
-    transform:scale(1.05);
-
-}
-
-
-@keyframes heartbeat{
-
-    0%,100%{
-        transform:scale(1);
-    }
-
-    50%{
-        transform:scale(1.15);
-    }
-
-}
-
 
 /* =========================
-   手机适配
+   手机端
 ========================= */
 
 @media(max-width:700px){
 
-    .hero h1{
-        font-size:38px;
-        letter-spacing:4px;
+    .container{
+        width:92%;
     }
 
-
-    .hero p{
-        font-size:16px;
+    header{
+        padding:60px 15px 40px;
     }
 
-
-    .timeline{
-
-        grid-template-columns:1fr;
-
+    header h1{
+        font-size:30px;
     }
-
-
-    .gallery{
-
-        grid-template-columns:1fr;
-
-    }
-
-
-    body > div[style*="text-align:center"] img,
-    .hero img,
-    .item img,
-    .gallery img{
-
-        width:100%;
-
-        height:auto;
-
-        max-width:420px;
-
-    }
-
 
     .section{
-
-        padding:45px 15px;
-
+        margin-bottom:60px;
     }
 
-
-    .title{
-
-        font-size:30px;
-
-        margin-bottom:25px;
-
+    .section-title{
+        font-size:25px;
     }
 
+    .top-gallery{
+        grid-template-columns:1fr;
+    }
+
+    .top-gallery img{
+        width:100%;
+        height:auto;
+        max-width:420px;
+        margin:auto;
+    }
+
+    .hero-images{
+        grid-template-columns:1fr;
+    }
+
+    .hero-images img{
+        width:100%;
+        height:auto;
+        max-width:420px;
+        margin:auto;
+    }
+
+    .timeline{
+        grid-template-columns:1fr;
+    }
+
+    .timeline-item img{
+        width:100%;
+        height:auto;
+        max-width:420px;
+        margin:auto;
+    }
+
+    .gallery{
+        grid-template-columns:1fr;
+    }
+
+    .gallery img{
+        width:100%;
+        height:auto;
+        max-width:420px;
+        margin:auto;
+    }
+
+    .days{
+        font-size:48px;
+    }
 
     .letter{
+        padding:25px 18px;
+    }
 
-        padding:25px;
+    .letter video{
+        width:100%;
+        height:auto;
+        max-width:420px;
+    }
 
+    .welcome-content h1{
+        font-size:32px;
+    }
+
+    .welcome-content h2{
+        font-size:22px;
+    }
+
+}
+
+/* =========================
+   小屏幕
+========================= */
+
+@media(max-width:400px){
+
+    .days{
+        font-size:42px;
+    }
+
+    .welcome-content h1{
+        font-size:28px;
     }
 
 }
@@ -409,20 +494,16 @@ body > div[style*="text-align:center"] img{
 
 
 <!-- =========================
-     入场页面
+     欢迎页面
 ========================= -->
 
 <div id="welcomeScreen">
 
     <div class="welcome-content">
 
-        <div class="heart">
-            LYL❤️CYT
-        </div>
+        <h1>LYL ❤️ CYT</h1>
 
-        <h1>
-            我们的世界
-        </h1>
+        <h2>我们的世界</h2>
 
         <p>
             有你的每一天，都值得被记录
@@ -441,94 +522,142 @@ body > div[style*="text-align:center"] img{
      背景音乐
 ========================= -->
 
-<audio id="bgMusic" loop preload="auto">
+<audio
+    id="bgMusic"
+    loop
+    preload="auto"
+>
 
     <source
         src="陆虎 - 拉过勾的.mp3"
-        type="audio/mpeg">
+        type="audio/mpeg"
+    >
 
 </audio>
+
+
+<!-- =========================
+     主体
+========================= -->
+
+<div class="container">
+
+
+<!-- =========================
+     页面标题
+========================= -->
+
+<header>
+
+    <h1>Our Story</h1>
+
+    <p>
+        关于我们，一点一点的回忆
+    </p>
+
+</header>
+
 
 
 <!-- =========================
      我们的回忆
 ========================= -->
 
-<div style="text-align:center;margin:30px;">
+<section class="section">
 
-    <h2>
+    <h2 class="section-title">
         我们的回忆 ❤️
     </h2>
 
 
-    <img
-        src="微信图片_20260914052211_46_15.jpg"
-        alt="我们的回忆">
+    <div class="top-gallery">
 
+        <img
+            src="微信图片_20260914052211_46_15.jpg"
+            alt="我们的回忆"
+        >
 
-    <img
-        src="微信图片_20260914052356_47_15.jpg"
-        alt="我们的回忆">
+        <img
+            src="微信图片_20260914052356_47_15.jpg"
+            alt="我们的回忆"
+        >
 
+        <img
+            src="微信图片_20260914052431_48_15.jpg"
+            alt="我们的回忆"
+        >
 
-    <img
-        src="微信图片_20260914052431_48_15.jpg"
-        alt="我们的回忆">
+        <img
+            src="微信图片_20260914052459_49_15.jpg"
+            alt="我们的回忆"
+        >
 
+        <img
+            src="微信图片_20260914054501_50_15.jpg"
+            alt="我们的回忆"
+        >
 
-    <img
-        src="微信图片_20260914052459_49_15.jpg"
-        alt="我们的回忆">
+        <img
+            src="微信图片_20260914054508_51_15.jpg"
+            alt="我们的回忆"
+        >
 
+    </div>
 
-    <img
-        src="微信图片_20260914054501_50_15.jpg"
-        alt="我们的回忆">
+</section>
 
-
-    <img
-        src="微信图片_20260914054508_51_15.jpg"
-        alt="我们的回忆">
-
-</div>
 
 
 <!-- =========================
-     首页
+     第一次过万圣节
 ========================= -->
 
-<section class="hero">
+<section class="section hero">
 
-    <div>
+    <h2>
+        YOUR NAME × HER NAME
+    </h2>
 
-        <h1>
-            YOUR NAME × HER NAME
-        </h1>
+    <p>
+        第一次过万圣节
+    </p>
 
 
-        <p>
-            第一次过万圣节
-        </p>
-
+    <div class="hero-images">
 
         <img
             src="微信图片_20260914054920_56_15.jpg"
-            alt="我们的回忆">
-
+            alt="第一次过万圣节"
+        >
 
         <img
             src="微信图片_20260914054913_55_15.jpg"
-            alt="我们的回忆">
+            alt="第一次过万圣节"
+        >
+
+    </div>
+
+</section>
 
 
-        <div class="days">
 
-            <span id="days">
-                0
-            </span>
+<!-- =========================
+     恋爱天数
+========================= -->
 
-            Days ❤️
+<section class="section">
 
+    <div class="days-box">
+
+        <div
+            class="days"
+            id="days"
+        >
+            0
+        </div>
+
+        <div class="days-text">
+            我们已经一起走过这么多天 ❤️
         </div>
 
     </div>
@@ -536,48 +665,58 @@ body > div[style*="text-align:center"] img{
 </section>
 
 
+
 <!-- =========================
-     时间轴
+     时间线
 ========================= -->
 
 <section class="section">
 
-    <h2 class="title">
-        Our Timeline
+    <h2 class="section-title">
+        我们的故事
     </h2>
 
 
     <div class="timeline">
 
 
-        <!-- 左边：广州长隆 -->
+        <!-- 广州长隆 -->
 
-        <div class="item">
+        <div class="timeline-item">
+
+            <h3>
+                广州长隆水上乐园
+            </h3>
 
             <p>
-                广州长隆水上乐园
+                一起去过的地方
             </p>
-
 
             <img
                 src="微信图片_20260914054811_52_15.jpg"
-                alt="广州长隆水上乐园">
+                alt="广州长隆水上乐园"
+            >
 
         </div>
 
 
-        <!-- 右边：汉口江滩 -->
 
-        <div class="item">
+        <!-- 汉口江滩 -->
+
+        <div class="timeline-item">
+
+            <h3>
+                汉口江滩
+            </h3>
 
             <p>
-                汉口江滩
+                一起留下的回忆
             </p>
-
 
             <img
                 src="微信图片_20260914054837_53_15.jpg"
-                alt="汉口江滩">
+                alt="汉口江滩"
+            >
 
         </div>
 
@@ -587,14 +726,15 @@ body > div[style*="text-align:center"] img{
 </section>
 
 
+
 <!-- =========================
-     Memories
+     更多回忆
 ========================= -->
 
 <section class="section">
 
-    <h2 class="title">
-        Memories
+    <h2 class="section-title">
+        更多回忆
     </h2>
 
 
@@ -605,81 +745,98 @@ body > div[style*="text-align:center"] img{
 
         <img
             src="微信图片_20260914183723_57_15.jpg"
-            alt="Memory">
-
+            alt="我们的回忆"
+        >
 
         <img
             src="微信图片_20260914183757_58_15.jpg"
-            alt="Memory">
-
+            alt="我们的回忆"
+        >
 
         <img
             src="微信图片_20260914183821_59_15.jpg"
-            alt="Memory">
-
+            alt="我们的回忆"
+        >
 
         <img
             src="微信图片_20260914183839_60_15.jpg"
-            alt="Memory">
-
+            alt="我们的回忆"
+        >
 
         <img
             src="微信图片_20260914183856_61_15.jpg"
-            alt="Memory">
-
+            alt="我们的回忆"
+        >
 
         <img
             src="微信图片_20260914195233_62_15.jpg"
-            alt="Memory">
+            alt="我们的回忆"
+        >
 
 
-        <!-- 新增的6张 -->
+        <!-- 后来的6张 -->
 
         <img
             src="微信图片_20260916192925_68_15.jpg"
-            alt="Memory">
-
+            alt="我们的回忆"
+        >
 
         <img
             src="微信图片_20260916192937_69_15.jpg"
-            alt="Memory">
-
+            alt="我们的回忆"
+        >
 
         <img
             src="微信图片_20260916192944_70_15.jpg"
-            alt="Memory">
-
+            alt="我们的回忆"
+        >
 
         <img
             src="微信图片_20260916193058_71_15.jpg"
-            alt="Memory">
-
+            alt="我们的回忆"
+        >
 
         <img
             src="微信图片_20260916193214_72_15.jpg"
-            alt="Memory">
-
+            alt="我们的回忆"
+        >
 
         <img
             src="微信图片_20260916192738_67_15.jpg"
-            alt="Memory">
+            alt="我们的回忆"
+        >
 
 
-        <!-- 原 A Letter 的两张照片 -->
+        <!-- 原来 A Letter 的两张照片 -->
 
         <img
             src="微信图片_20260914054900_54_15.jpg"
-            alt="Memory">
-
+            alt="我们的回忆"
+        >
 
         <img
             src="微信图片_20260914235748_63_15.jpg"
-            alt="Memory">
+            alt="我们的回忆"
+        >
+
+
+        <!-- 最新增加的两张 -->
+
+        <img
+            src="微信图片_20260916195944_74_15.jpg"
+            alt="我们的回忆"
+        >
+
+        <img
+            src="微信图片_20260916195958_75_15.jpg"
+            alt="我们的回忆"
+        >
 
 
     </div>
 
 </section>
+
 
 
 <!-- =========================
@@ -688,7 +845,7 @@ body > div[style*="text-align:center"] img{
 
 <section class="section">
 
-    <h2 class="title">
+    <h2 class="section-title">
         A Letter
     </h2>
 
@@ -696,43 +853,53 @@ body > div[style*="text-align:center"] img{
     <div class="letter">
 
 
-        臭宝宝：
+        <!-- 视频 -->
+
+        <video
+            controls
+            preload="metadata"
+        >
+
+            <source
+                src="05ef83cd95570b5636907803f68ebebf.mp4"
+                type="video/mp4"
+            >
+
+            你的浏览器不支持视频播放。
+
+        </video>
 
 
-        <br>
 
+        <!-- 情书 -->
 
-        谢谢你出现在我的生命里。
+        <p>
+            臭宝宝：
+        </p>
 
+        <p>
+            谢谢你出现在我的生命里。
+        </p>
 
-        <br>
+        <p>
+            希望未来很多年，
+        </p>
 
+        <p>
+            我们依然可以一起看日落，
+        </p>
 
-        希望未来很多年，
+        <p>
+            一起吃喜欢的东西，
+        </p>
 
+        <p>
+            一起去更多地方。
+        </p>
 
-        <br>
-
-
-        我们依然可以一起看日落，
-
-
-        <br>
-
-
-        一起吃喜欢的东西，
-
-
-        <br>
-
-
-        一起去更多地方。
-
-
-        <br><br>
-
-
-        Love ❤️
+        <p>
+            Love ❤️
+        </p>
 
 
     </div>
@@ -740,76 +907,74 @@ body > div[style*="text-align:center"] img{
 </section>
 
 
+
+</div>
+
+
+
 <!-- =========================
-     日期计算
+     Footer
+========================= -->
+
+<footer>
+
+    <p>
+        © Our Story
+    </p>
+
+    <p>
+        Made with ❤️
+    </p>
+
+</footer>
+
+
+
+<!-- =========================
+     JavaScript
 ========================= -->
 
 <script>
 
-let start =
-new Date("2020-03-26");
 
-
-let now =
-new Date();
-
-
-let diff =
-Math.floor(
-    (now - start) /
-    (1000 * 60 * 60 * 24)
-);
-
-
-document.getElementById("days")
-.innerHTML = diff;
-
-</script>
-
-
-<!-- =========================
-     点击进入 + 音乐
-========================= -->
-
-<script>
+/* =========================
+   点击进入 + 播放音乐
+========================= */
 
 const enterBtn =
-document.getElementById("enterBtn");
-
+    document.getElementById("enterBtn");
 
 const welcomeScreen =
-document.getElementById("welcomeScreen");
-
+    document.getElementById("welcomeScreen");
 
 const bgMusic =
-document.getElementById("bgMusic");
+    document.getElementById("bgMusic");
 
 
 enterBtn.addEventListener(
     "click",
     function(){
 
-        bgMusic.play()
-        .catch(function(error){
+        bgMusic
+            .play()
+            .catch(function(error){
 
-            console.log(
-                "音乐播放失败：",
-                error
-            );
+                console.log(
+                    "音乐播放失败：",
+                    error
+                );
 
-        });
+            });
 
 
-        welcomeScreen.classList.add(
-            "hide"
-        );
+        welcomeScreen.classList.add("hide");
 
 
         setTimeout(
             function(){
 
                 welcomeScreen.style.display =
-                "none";
+                    "none";
 
             },
             1000
@@ -818,9 +983,40 @@ enterBtn.addEventListener(
     }
 );
 
+
+
+/* =========================
+   恋爱天数
+========================= */
+
+let start =
+    new Date("2020-03-26");
+
+let now =
+    new Date();
+
+
+let diff =
+    Math.floor(
+        (
+            now - start
+        )
+        /
+        (
+            1000 *
+            60 *
+            60 *
+            24
+        )
+    );
+
+
+document.getElementById("days")
+    .innerHTML = diff;
+
+
 </script>
 
 
 </body>
-
 </html>
