@@ -1039,6 +1039,43 @@ document.getElementById("days")
 
 </script>
 
+<script>
 
+const videos = document.querySelectorAll("video");
+const music = document.getElementById("bgMusic");
+
+videos.forEach(function(video){
+
+    video.addEventListener("play",function(){
+
+        music.pause();
+
+    });
+
+
+    video.addEventListener("pause",function(){
+
+        music.play().catch(function(error){
+
+            console.log("音乐恢复失败",error);
+
+        });
+
+    });
+
+
+    video.addEventListener("ended",function(){
+
+        music.play().catch(function(error){
+
+            console.log("音乐恢复失败",error);
+
+        });
+
+    });
+
+});
+
+</script>
 </body>
 </html>
