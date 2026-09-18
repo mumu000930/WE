@@ -376,6 +376,20 @@ footer{
     font-size:14px;
 }
 
+.summer-gallery{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.summer-gallery img{
+    width:100%;
+    height:260px;
+    object-fit:contain;
+    background:#f7f7f7;
+    border-radius:12px;
+}
+
 /* =========================
    手机端
 ========================= */
@@ -433,6 +447,10 @@ footer{
         height:auto;
         max-width:420px;
         margin:auto;
+    }
+
+    .summer-gallery{
+        grid-template-columns:1fr;
     }
 
     .gallery{
@@ -732,38 +750,18 @@ footer{
         那年夏天留下的珍贵回忆
     </p>
 
-    <img
-        src="微信图片_20260917221538_89_15.jpg"
-        alt="2022年暑假"
-    >
+    <div class="summer-gallery">
 
-    <img
-        src="微信图片_20260917221806_90_15.jpg"
-        alt="2022年暑假"
-    >
+        <img src="微信图片_20260917221538_89_15.jpg" alt="2022年暑假">
+        <img src="微信图片_20260917221806_90_15.jpg" alt="2022年暑假">
+        <img src="微信图片_20260917221855_91_15.jpg" alt="2022年暑假">
+        <img src="微信图片_20260917221905_92_15.jpg" alt="2022年暑假">
+        <img src="微信图片_20260917221922_93_15.jpg" alt="2022年暑假">
+        <img src="微信图片_20260917222001_94_15.jpg" alt="2022年暑假">
 
-    <img
-        src="微信图片_20260917221855_91_15.jpg"
-        alt="2022年暑假"
-    >
-
-    <img
-        src="微信图片_20260917221905_92_15.jpg"
-        alt="2022年暑假"
-    >
-
-    <img
-        src="微信图片_20260917221922_93_15.jpg"
-        alt="2022年暑假"
-    >
-
-    <img
-        src="微信图片_20260917220001_94_15.jpg"
-        alt="2022年暑假"
-    >
+    </div>
 
 </div>
-
     </div>
 
 </section>
