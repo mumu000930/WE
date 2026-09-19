@@ -286,23 +286,20 @@ header p{
     border-radius:12px;
 }
 
-
-/* 2022年暑假多图排版 */
-.timeline-item .summer-images{
+/* 珠海之行：两张照片并排 */
+.zhuhai-images{
     display:grid;
     grid-template-columns:repeat(2,1fr);
     gap:15px;
-    margin-top:20px;
 }
 
-.timeline-item .summer-images img{
-    height:260px;
-}
-
-@media(max-width:700px){
-    .timeline-item .summer-images{
-        grid-template-columns:1fr;
-    }
+.zhuhai-images img{
+    width:100%;
+    height:420px;
+    object-fit:contain;
+    background:#f7f7f7;
+    border-radius:12px;
+    display:block;
 }
 
 /* =========================
@@ -448,6 +445,17 @@ footer{
     }
 
     .timeline-item img{
+        width:100%;
+        height:auto;
+        max-width:420px;
+        margin:auto;
+    }
+
+    .zhuhai-images{
+        grid-template-columns:1fr;
+    }
+
+    .zhuhai-images img{
         width:100%;
         height:auto;
         max-width:420px;
@@ -751,32 +759,94 @@ footer{
         那年夏天留下的珍贵回忆
     </p>
 
-    <div class="summer-images">
-
     <img
         src="微信图片_20260917221538_89_15.jpg"
         alt="2022年暑假"
     >
+
     <img
         src="微信图片_20260917221806_90_15.jpg"
         alt="2022年暑假"
     >
+
     <img
         src="微信图片_20260917221855_91_15.jpg"
         alt="2022年暑假"
     >
+
     <img
         src="微信图片_20260917221905_92_15.jpg"
         alt="2022年暑假"
     >
+
     <img
         src="微信图片_20260917221922_93_15.jpg"
         alt="2022年暑假"
     >
+
     <img
         src="微信图片_20260917222001_94_15.jpg"
         alt="2022年暑假"
     >
+
+</div>
+
+<!-- 珠海之行 -->
+<div class="timeline-item">
+
+    <h3>
+        珠海之行
+    </h3>
+
+    <p>
+        一起看过的海，一起留下的回忆
+    </p>
+
+    <div class="zhuhai-images">
+
+        <!-- 六张照片 -->
+
+        <img
+            src="微信图片_20260917221538_89_15.jpg"
+            alt="珠海之行"
+        >
+
+        <img
+            src="微信图片_20260917221806_90_15.jpg"
+            alt="珠海之行"
+        >
+
+        <img
+            src="微信图片_20260917221855_91_15.jpg"
+            alt="珠海之行"
+        >
+
+        <img
+            src="微信图片_20260917221905_92_15.jpg"
+            alt="珠海之行"
+        >
+
+        <img
+            src="微信图片_20260917221922_93_15.jpg"
+            alt="珠海之行"
+        >
+
+        <img
+            src="微信图片_20260917222001_94_15.jpg"
+            alt="珠海之行"
+        >
+
+        <!-- 刚刚发来的两张：并排显示 -->
+
+        <img
+            src="微信图片_20260918180919_96_15.jpg"
+            alt="珠海之行"
+        >
+
+        <img
+            src="微信图片_20260918180927_97_15.jpg"
+            alt="珠海之行"
+        >
 
     </div>
 
