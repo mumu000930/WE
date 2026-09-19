@@ -291,18 +291,29 @@ header p{
 
 /* 2022年暑假多图排版 */
 .timeline-item .summer-images{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
+    display:flex;
+    flex-direction:column;
     gap:15px;
     margin-top:20px;
 }
 
+.timeline-item .summer-row{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:15px;
+    align-items:start;
+}
+
 .timeline-item .summer-images img{
-    height:auto;
+    width:100%;
+    height:auto !important;
+    max-height:none !important;
+    object-fit:contain;
+    display:block;
 }
 
 @media(max-width:700px){
-    .timeline-item .summer-images{
+    .timeline-item .summer-row{
         grid-template-columns:1fr;
     }
 }
@@ -755,30 +766,20 @@ footer{
 
     <div class="summer-images">
 
-    <img
-        src="微信图片_20260917221806_90_15.jpg"
-        alt="2022年暑假"
-    >
-    <img
-        src="微信图片_20260917221922_93_15.jpg"
-        alt="2022年暑假"
-    >
-    <img
-        src="微信图片_20260917221538_89_15.jpg"
-        alt="2022年暑假"
-    >
-    <img
-        src="微信图片_20260917221855_91_15.jpg"
-        alt="2022年暑假"
-    >
-    <img
-        src="微信图片_20260917221905_92_15.jpg"
-        alt="2022年暑假"
-    >
-    <img
-        src="微信图片_20260917222001_94_15.jpg"
-        alt="2022年暑假"
-    >
+        <div class="summer-row">
+            <img src="微信图片_20260917221806_90_15.jpg" alt="2022年暑假">
+            <img src="微信图片_20260917221922_93_15.jpg" alt="2022年暑假">
+        </div>
+
+        <div class="summer-row">
+            <img src="微信图片_20260917221538_89_15.jpg" alt="2022年暑假">
+            <img src="微信图片_20260917221855_91_15.jpg" alt="2022年暑假">
+        </div>
+
+        <div class="summer-row">
+            <img src="微信图片_20260917221905_92_15.jpg" alt="2022年暑假">
+            <img src="微信图片_20260917222001_94_15.jpg" alt="2022年暑假">
+        </div>
 
     </div>
 
@@ -797,13 +798,21 @@ footer{
 
     <div class="summer-images">
 
-        <!-- 珠海之行：严格使用这6张原图 -->
-        <img src="微信图片_20260918180919_96_15.jpg" alt="珠海之行" loading="eager" decoding="auto">
-        <img src="微信图片_20260918180927_97_15.jpg" alt="珠海之行" loading="eager" decoding="auto">
-        <img src="微信图片_20260918181054_99_15.jpg" alt="珠海之行" loading="eager" decoding="auto">
-        <img src="微信图片_20260918180857_95_15.jpg" alt="珠海之行" loading="eager" decoding="auto">
-        <img src="微信图片_20260918181008_98_15.jpg" alt="珠海之行" loading="eager" decoding="auto">
-        <img src="微信图片_20260918181346_100_15.jpg" alt="珠海之行" loading="eager" decoding="auto">
+        <!-- 珠海之行：96男左、97女右，完整显示原图 -->
+        <div class="summer-row">
+            <img src="微信图片_20260918180919_96_15.jpg" alt="珠海之行" loading="eager" decoding="auto">
+            <img src="微信图片_20260918180927_97_15.jpg" alt="珠海之行" loading="eager" decoding="auto">
+        </div>
+
+        <div class="summer-row">
+            <img src="微信图片_20260918181054_99_15.jpg" alt="珠海之行" loading="eager" decoding="auto">
+            <img src="微信图片_20260918180857_95_15.jpg" alt="珠海之行" loading="eager" decoding="auto">
+        </div>
+
+        <div class="summer-row">
+            <img src="微信图片_20260918181008_98_15.jpg" alt="珠海之行" loading="eager" decoding="auto">
+            <img src="微信图片_20260918181346_100_15.jpg" alt="珠海之行" loading="eager" decoding="auto">
+        </div>
 
     </div>
 
