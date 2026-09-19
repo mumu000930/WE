@@ -1,0 +1,1167 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Story</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:
+        "Microsoft YaHei",
+        "PingFang SC",
+        Arial,
+        sans-serif;
+    background:#f7f4f1;
+    color:#333;
+}
+
+/* =========================
+   欢迎页面
+========================= */
+
+#welcomeScreen{
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,0.90),
+            rgba(255,255,255,0.90)
+        );
+
+    z-index:9999;
+
+    transition:opacity 1s ease;
+}
+
+.welcome-content{
+    text-align:center;
+    padding:30px;
+}
+
+.welcome-content h1{
+    font-size:42px;
+    letter-spacing:5px;
+    margin-bottom:20px;
+}
+
+.welcome-content h2{
+    font-size:26px;
+    font-weight:400;
+    margin-bottom:15px;
+}
+
+.welcome-content p{
+    color:#777;
+    font-size:16px;
+    margin-bottom:30px;
+}
+
+#enterBtn{
+    border:none;
+    padding:14px 32px;
+
+    background:#333;
+    color:white;
+
+    border-radius:30px;
+
+    font-size:16px;
+    cursor:pointer;
+
+    transition:all .3s ease;
+}
+
+#enterBtn:hover{
+    transform:translateY(-2px);
+    opacity:.85;
+}
+
+#welcomeScreen.hide{
+    opacity:0;
+}
+
+/* =========================
+   主体
+========================= */
+
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+}
+
+/* =========================
+   顶部标题
+========================= */
+
+header{
+    text-align:center;
+    padding:80px 20px 50px;
+}
+
+header h1{
+    font-size:38px;
+    font-weight:500;
+    letter-spacing:4px;
+}
+
+header p{
+    margin-top:15px;
+    color:#888;
+}
+
+/* =========================
+   Section
+========================= */
+
+.section{
+    margin-bottom:80px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:28px;
+    font-weight:500;
+    margin-bottom:40px;
+}
+
+.section-title::after{
+    content:"";
+    display:block;
+
+    width:50px;
+    height:2px;
+
+    background:#333;
+
+    margin:15px auto 0;
+}
+
+/* =========================
+   顶部照片
+========================= */
+
+.top-gallery{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.top-gallery img{
+    width:100%;
+    height:auto;
+
+    object-fit:contain;
+
+    background:#fff;
+
+    border-radius:12px;
+
+    display:block;
+}
+
+/* =========================
+   Hero
+========================= */
+
+.hero{
+    text-align:center;
+    padding:20px 0;
+}
+
+.hero h2{
+    font-size:30px;
+    font-weight:400;
+    margin-bottom:10px;
+}
+
+.hero p{
+    color:#999;
+    margin-bottom:30px;
+}
+
+.hero-images{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.hero-images img{
+    width:100%;
+    height:auto;
+
+    object-fit:contain;
+
+    background:#fff;
+
+    border-radius:12px;
+}
+
+/* =========================
+   天数
+========================= */
+
+.days-box{
+    text-align:center;
+    margin:60px 0;
+}
+
+.days{
+    font-size:64px;
+    font-weight:500;
+    letter-spacing:3px;
+}
+
+.days-text{
+    margin-top:10px;
+    color:#888;
+    font-size:16px;
+}
+
+/* =========================
+   时间线
+========================= */
+
+.timeline{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+
+    gap:30px;
+
+    border-left:none;
+
+    padding-left:0;
+}
+
+.timeline-item{
+    background:#fff;
+
+    padding:25px;
+
+    border-radius:18px;
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,0.05);
+}
+
+.timeline-item h3{
+    font-size:22px;
+    font-weight:500;
+
+    margin-bottom:8px;
+}
+
+.timeline-item p{
+    color:#999;
+
+    margin-bottom:20px;
+}
+
+.timeline-item img{
+    width:100%;
+    height:auto;
+
+    object-fit:contain;
+
+    background:#f7f7f7;
+
+    border-radius:12px;
+
+    image-rendering:auto;
+}
+
+
+/* 2022年暑假多图排版 */
+.timeline-item .summer-images{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    margin-top:20px;
+}
+
+.timeline-item .summer-images img{
+    height:auto;
+}
+
+@media(max-width:700px){
+    .timeline-item .summer-images{
+        grid-template-columns:1fr;
+    }
+}
+
+/* =========================
+   回忆
+========================= */
+
+.gallery{
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    height:auto;
+
+    object-fit:contain;
+
+    background:#fff;
+
+    border-radius:12px;
+
+    display:block;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.gallery img:hover{
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.10);
+}
+
+/* =========================
+   情书
+========================= */
+
+.letter{
+    background:#fff;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    line-height:2;
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,0.05);
+
+    text-align:center;
+}
+
+.letter p{
+    margin-bottom:10px;
+}
+
+.letter video{
+    width:420px;
+    height:420px;
+
+    max-width:100%;
+
+    object-fit:contain;
+
+    border-radius:12px;
+
+    display:block;
+
+    margin:20px auto;
+
+    background:#000;
+}
+
+/* =========================
+   底部
+========================= */
+
+footer{
+    text-align:center;
+
+    padding:50px 20px 70px;
+
+    color:#999;
+
+    font-size:14px;
+}
+
+/* =========================
+   手机端
+========================= */
+
+@media(max-width:700px){
+
+    .container{
+        width:92%;
+    }
+
+    header{
+        padding:60px 15px 40px;
+    }
+
+    header h1{
+        font-size:30px;
+    }
+
+    .section{
+        margin-bottom:60px;
+    }
+
+    .section-title{
+        font-size:25px;
+    }
+
+    .top-gallery{
+        grid-template-columns:1fr;
+    }
+
+    .top-gallery img{
+        width:100%;
+        height:auto;
+        max-width:420px;
+        margin:auto;
+    }
+
+    .hero-images{
+        grid-template-columns:1fr;
+    }
+
+    .hero-images img{
+        width:100%;
+        height:auto;
+        max-width:420px;
+        margin:auto;
+    }
+
+    .timeline{
+        grid-template-columns:1fr;
+    }
+
+    .timeline-item img{
+        width:100%;
+        height:auto;
+        max-width:420px;
+        margin:auto;
+    }
+
+    .gallery{
+        grid-template-columns:1fr;
+    }
+
+    .gallery img{
+        width:100%;
+        height:auto;
+        max-width:420px;
+        margin:auto;
+    }
+
+    .days{
+        font-size:48px;
+    }
+
+    .letter{
+        padding:25px 18px;
+    }
+
+    .letter video{
+        width:100%;
+        height:auto;
+        max-width:420px;
+    }
+
+    .welcome-content h1{
+        font-size:32px;
+    }
+
+    .welcome-content h2{
+        font-size:22px;
+    }
+
+}
+
+/* =========================
+   小屏幕
+========================= */
+
+@media(max-width:400px){
+
+    .days{
+        font-size:42px;
+    }
+
+    .welcome-content h1{
+        font-size:28px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     欢迎页面
+========================= -->
+
+<div id="welcomeScreen">
+
+    <div class="welcome-content">
+
+        <h1>LYL ❤️ CYT</h1>
+
+        <h2>我们的世界</h2>
+
+        <p>
+            有你的每一天，都值得被记录
+        </p>
+
+        <button id="enterBtn">
+            点击进入 ❤️
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     背景音乐
+========================= -->
+
+<audio
+    id="bgMusic"
+    loop
+    preload="auto"
+>
+
+    <source
+        src="陆虎 - 拉过勾的.mp3"
+        type="audio/mpeg"
+    >
+
+</audio>
+
+
+<!-- =========================
+     主体
+========================= -->
+
+<div class="container">
+
+
+<!-- =========================
+     页面标题
+========================= -->
+
+<header>
+
+    <h1>Our Story</h1>
+
+    <p>
+        关于我们，一点一点的回忆
+    </p>
+
+</header>
+
+
+
+<!-- =========================
+     我们的回忆
+========================= -->
+
+<section class="section">
+
+    <h2 class="section-title">
+        我们的回忆 ❤️
+    </h2>
+
+
+    <div class="top-gallery">
+
+        <img
+            src="微信图片_20260914052211_46_15.jpg"
+            alt="我们的回忆"
+        >
+
+        <img
+            src="微信图片_20260914052356_47_15.jpg"
+            alt="我们的回忆"
+        >
+
+        <img
+            src="微信图片_20260914052431_48_15.jpg"
+            alt="我们的回忆"
+        >
+
+        <img
+            src="微信图片_20260914052459_49_15.jpg"
+            alt="我们的回忆"
+        >
+
+        <img
+            src="微信图片_20260914054501_50_15.jpg"
+            alt="我们的回忆"
+        >
+
+        <img
+            src="微信图片_20260914054508_51_15.jpg"
+            alt="我们的回忆"
+        >
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     第一次过万圣节
+========================= -->
+
+<section class="section hero">
+
+    <h2>
+        YOUR NAME × HER NAME
+    </h2>
+
+    <p>
+        第一次过万圣节
+    </p>
+
+
+    <div class="hero-images">
+
+        <img
+            src="微信图片_20260914054920_56_15.jpg"
+            alt="第一次过万圣节"
+        >
+
+        <img
+            src="微信图片_20260914054913_55_15.jpg"
+            alt="第一次过万圣节"
+        >
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     恋爱天数
+========================= -->
+
+<section class="section">
+
+    <div class="days-box">
+
+        <div
+            class="days"
+            id="days"
+        >
+            0
+        </div>
+
+        <div class="days-text">
+            我们已经一起走过这么多天 ❤️
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     时间线
+========================= -->
+
+<section class="section">
+
+    <h2 class="section-title">
+        我们的故事
+    </h2>
+
+
+    <div class="timeline">
+
+
+        <!-- 广州长隆 -->
+
+        <div class="timeline-item">
+
+            <h3>
+                广州长隆水上乐园
+            </h3>
+
+            <p>
+                一起去过的地方
+            </p>
+
+            <img
+                src="微信图片_20260914054811_52_15.jpg"
+                alt="广州长隆水上乐园"
+            >
+
+        </div>
+
+
+
+        <!-- 汉口江滩 -->
+
+        <div class="timeline-item">
+
+            <h3>
+                汉口江滩
+            </h3>
+
+            <p>
+                一起留下的回忆
+            </p>
+
+            <img
+                src="微信图片_20260914054837_53_15.jpg"
+                alt="汉口江滩"
+            >
+
+        </div>
+<!-- 2022年暑假 -->
+
+<div class="timeline-item">
+
+    <h3>
+        2022年暑假
+    </h3>
+
+    <p>
+        那年夏天留下的珍贵回忆
+    </p>
+
+    <div class="summer-images">
+
+    <img
+        src="微信图片_20260917221538_89_15.jpg"
+        alt="2022年暑假"
+    >
+    <img
+        src="微信图片_20260917221806_90_15.jpg"
+        alt="2022年暑假"
+    >
+    <img
+        src="微信图片_20260917221855_91_15.jpg"
+        alt="2022年暑假"
+    >
+    <img
+        src="微信图片_20260917221905_92_15.jpg"
+        alt="2022年暑假"
+    >
+    <img
+        src="微信图片_20260917221922_93_15.jpg"
+        alt="2022年暑假"
+    >
+    <img
+        src="微信图片_20260917222001_94_15.jpg"
+        alt="2022年暑假"
+    >
+
+    </div>
+
+</div>
+
+<!-- 珠海之行 -->
+<div class="timeline-item">
+
+    <h3>
+        珠海之行
+    </h3>
+
+    <p>
+        一起看过的海，一起留下的回忆
+    </p>
+
+    <div class="summer-images">
+
+        <!-- 珠海之行：严格使用这6张原图 -->
+        <img src="微信图片_20260918180857_95_15.jpg" alt="珠海之行" loading="eager" decoding="auto">
+        <img src="微信图片_20260918180919_96_15.jpg" alt="珠海之行" loading="eager" decoding="auto">
+        <img src="微信图片_20260918180927_97_15.jpg" alt="珠海之行" loading="eager" decoding="auto">
+        <img src="微信图片_20260918181008_98_15.jpg" alt="珠海之行" loading="eager" decoding="auto">
+        <img src="微信图片_20260918181054_99_15.jpg" alt="珠海之行" loading="eager" decoding="auto">
+        <img src="微信图片_20260918181346_100_15.jpg" alt="珠海之行" loading="eager" decoding="auto">
+
+    </div>
+
+</div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     更多回忆
+========================= -->
+
+<section class="section">
+
+    <h2 class="section-title">
+        更多回忆
+    </h2>
+
+
+    <div class="gallery">
+
+
+        <!-- 原来的6张 -->
+
+        <img
+            src="微信图片_20260914183723_57_15.jpg"
+            alt="我们的回忆"
+        >
+
+        <img
+            src="微信图片_20260914183757_58_15.jpg"
+            alt="我们的回忆"
+        >
+
+        <img
+            src="微信图片_20260914183821_59_15.jpg"
+            alt="我们的回忆"
+        >
+
+        <img
+            src="微信图片_20260914183839_60_15.jpg"
+            alt="我们的回忆"
+        >
+
+        <img
+            src="微信图片_20260914183856_61_15.jpg"
+            alt="我们的回忆"
+        >
+
+        <img
+            src="微信图片_20260914195233_62_15.jpg"
+            alt="我们的回忆"
+        >
+
+
+        <!-- 后来的6张 -->
+
+        <img
+            src="微信图片_20260916192925_68_15.jpg"
+            alt="我们的回忆"
+        >
+
+        <img
+            src="微信图片_20260916192937_69_15.jpg"
+            alt="我们的回忆"
+        >
+
+        <img
+            src="微信图片_20260916192944_70_15.jpg"
+            alt="我们的回忆"
+        >
+
+        <img
+            src="微信图片_20260916193058_71_15.jpg"
+            alt="我们的回忆"
+        >
+
+        <img
+            src="微信图片_20260916193214_72_15.jpg"
+            alt="我们的回忆"
+        >
+
+        <img
+            src="微信图片_20260916192738_67_15.jpg"
+            alt="我们的回忆"
+        >
+
+
+        <!-- 原来 A Letter 的两张照片 -->
+
+        <img
+            src="微信图片_20260914054900_54_15.jpg"
+            alt="我们的回忆"
+        >
+
+        <img
+            src="微信图片_20260914235748_63_15.jpg"
+            alt="我们的回忆"
+        >
+
+
+        <!-- 最新增加的两张 -->
+
+        <img
+            src="微信图片_20260916195944_74_15.jpg"
+            alt="我们的回忆"
+        >
+
+        <img
+            src="微信图片_20260916195958_75_15.jpg"
+            alt="我们的回忆"
+        >
+
+        <img src="微信图片_20260916230153_80_15.jpg" alt="我们的回忆">
+        <img src="微信图片_20260916230202_81_15.jpg" alt="我们的回忆">
+        <img src="微信图片_20260916230211_82_15.jpg" alt="我们的回忆">
+        <img src="微信图片_20260916230305_83_15.jpg" alt="我们的回忆">
+        <img src="微信图片_20260916230503_85_15.jpg" alt="我们的回忆">
+        <img src="微信图片_20260916230711_86_15.jpg" alt="我们的回忆">
+        <img src="微信图片_20260916231201_6261_2.jpg" alt="我们的回忆">
+        <img src="微信图片_20260916231202_6262_2.jpg" alt="我们的回忆">
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     A Letter
+========================= -->
+
+<section class="section">
+
+    <h2 class="section-title">
+        Our Moments ❤️
+    </h2>
+
+
+    <div class="letter">
+
+
+        <!-- 视频 -->
+
+        <video
+            controls
+            preload="metadata"
+        >
+
+            <source
+                src="05ef83cd95570b5636907803f68ebebf.mp4"
+                type="video/mp4"
+            >
+
+            你的浏览器不支持视频播放。
+
+        </video>
+
+        <video controls preload="metadata">
+            <source src="16c671f3cabed1bb62c6cf119b74c81f.mp4" type="video/mp4">
+        </video>
+
+        <video controls preload="metadata">
+            <source src="f8eaa8afc6e892ad83b688a33bf953b9.mp4" type="video/mp4">
+        </video>
+
+        <video controls preload="metadata">
+            <source src="b1592f6dd1de8f072f5ca44e3c3a8bc6.mp4" type="video/mp4">
+        </video>
+
+
+
+        <!-- 情书 -->
+
+        <p>
+            臭宝宝：
+        </p>
+
+        <p>
+            谢谢你出现在我的生命里。
+        </p>
+
+        <p>
+            希望未来很多年，
+        </p>
+
+        <p>
+            我们依然可以一起看日落，
+        </p>
+
+        <p>
+            一起吃喜欢的东西，
+        </p>
+
+        <p>
+            一起去更多地方。
+        </p>
+
+        <p>
+            Love ❤️
+        </p>
+
+
+    </div>
+
+</section>
+
+
+
+</div>
+
+
+
+<!-- =========================
+     Footer
+========================= -->
+
+<footer>
+
+    <p>
+        © Our Story
+    </p>
+
+    <p>
+        Made with ❤️
+    </p>
+
+</footer>
+
+
+
+<!-- =========================
+     JavaScript
+========================= -->
+
+<script>
+
+
+/* =========================
+   点击进入 + 播放音乐
+========================= */
+
+const enterBtn =
+    document.getElementById("enterBtn");
+
+const welcomeScreen =
+    document.getElementById("welcomeScreen");
+
+const bgMusic =
+    document.getElementById("bgMusic");
+
+
+enterBtn.addEventListener(
+    "click",
+    function(){
+
+        bgMusic
+            .play()
+            .catch(function(error){
+
+                console.log(
+                    "音乐播放失败：",
+                    error
+                );
+
+            });
+
+
+        welcomeScreen.classList.add("hide");
+
+
+        setTimeout(
+            function(){
+
+                welcomeScreen.style.display =
+                    "none";
+
+            },
+            1000
+        );
+
+    }
+);
+
+
+
+/* =========================
+   恋爱天数
+========================= */
+
+let start =
+    new Date("2020-03-26");
+
+let now =
+    new Date();
+
+
+let diff =
+    Math.floor(
+        (
+            now - start
+        )
+        /
+        (
+            1000 *
+            60 *
+            60 *
+            24
+        )
+    );
+
+
+document.getElementById("days")
+    .innerHTML = diff;
+
+
+</script>
+
+<script>
+
+const videos = document.querySelectorAll("video");
+const music = document.getElementById("bgMusic");
+
+videos.forEach(function(video){
+
+    video.addEventListener("play",function(){
+
+        music.pause();
+
+    });
+
+
+    video.addEventListener("pause",function(){
+
+        music.play().catch(function(error){
+
+            console.log("音乐恢复失败",error);
+
+        });
+
+    });
+
+
+    video.addEventListener("ended",function(){
+
+        music.play().catch(function(error){
+
+            console.log("音乐恢复失败",error);
+
+        });
+
+    });
+
+});
+
+</script>
+</body>
+</html>
