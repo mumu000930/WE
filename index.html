@@ -286,20 +286,33 @@ header p{
     border-radius:12px;
 }
 
-/* 珠海之行：两张照片并排 */
-.zhuhai-images{
+/* 2022年暑假 / 珠海之行照片排版 */
+.story-images{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:15px;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:12px;
+    margin-top:10px;
 }
 
-.zhuhai-images img{
+.story-images img{
     width:100%;
-    height:420px;
+    height:240px;
     object-fit:contain;
     background:#f7f7f7;
     border-radius:12px;
     display:block;
+}
+
+@media (max-width:700px){
+    .story-images{
+        grid-template-columns:1fr;
+    }
+
+    .story-images img{
+        height:auto;
+        max-width:420px;
+        margin:auto;
+    }
 }
 
 /* =========================
@@ -759,39 +772,21 @@ footer{
         那年夏天留下的珍贵回忆
     </p>
 
-    <img
-        src="微信图片_20260917221538_89_15.jpg"
-        alt="2022年暑假"
-    >
+    <div class="story-images">
 
-    <img
-        src="微信图片_20260917221806_90_15.jpg"
-        alt="2022年暑假"
-    >
+        <img src="微信图片_20260914183723_57_15.jpg" alt="2022年暑假">
+        <img src="微信图片_20260914183757_58_15.jpg" alt="2022年暑假">
+        <img src="微信图片_20260914183821_59_15.jpg" alt="2022年暑假">
+        <img src="微信图片_20260914183839_60_15.jpg" alt="2022年暑假">
+        <img src="微信图片_20260914183856_61_15.jpg" alt="2022年暑假">
+        <img src="微信图片_20260914195233_62_15.jpg" alt="2022年暑假">
 
-    <img
-        src="微信图片_20260917221855_91_15.jpg"
-        alt="2022年暑假"
-    >
-
-    <img
-        src="微信图片_20260917221905_92_15.jpg"
-        alt="2022年暑假"
-    >
-
-    <img
-        src="微信图片_20260917221922_93_15.jpg"
-        alt="2022年暑假"
-    >
-
-    <img
-        src="微信图片_20260917222001_94_15.jpg"
-        alt="2022年暑假"
-    >
+    </div>
 
 </div>
 
 <!-- 珠海之行 -->
+
 <div class="timeline-item">
 
     <h3>
@@ -802,51 +797,14 @@ footer{
         一起看过的海，一起留下的回忆
     </p>
 
-    <div class="zhuhai-images">
+    <div class="story-images">
 
-        <!-- 六张照片 -->
-
-        <img
-            src="微信图片_20260917221538_89_15.jpg"
-            alt="珠海之行"
-        >
-
-        <img
-            src="微信图片_20260917221806_90_15.jpg"
-            alt="珠海之行"
-        >
-
-        <img
-            src="微信图片_20260917221855_91_15.jpg"
-            alt="珠海之行"
-        >
-
-        <img
-            src="微信图片_20260917221905_92_15.jpg"
-            alt="珠海之行"
-        >
-
-        <img
-            src="微信图片_20260917221922_93_15.jpg"
-            alt="珠海之行"
-        >
-
-        <img
-            src="微信图片_20260917222001_94_15.jpg"
-            alt="珠海之行"
-        >
-
-        <!-- 刚刚发来的两张：并排显示 -->
-
-        <img
-            src="微信图片_20260918180919_96_15.jpg"
-            alt="珠海之行"
-        >
-
-        <img
-            src="微信图片_20260918180927_97_15.jpg"
-            alt="珠海之行"
-        >
+        <img src="微信图片_20260918180857_90_15.jpg" alt="珠海之行">
+        <img src="微信图片_20260918180919_91_15.jpg" alt="珠海之行">
+        <img src="微信图片_20260918180927_92_15.jpg" alt="珠海之行">
+        <img src="微信图片_20260918181008_93_15.jpg" alt="珠海之行">
+        <img src="微信图片_20260918181054_94_15.jpg" alt="珠海之行">
+        <img src="微信图片_20260918181346_95_15.jpg" alt="珠海之行">
 
     </div>
 
